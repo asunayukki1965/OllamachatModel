@@ -1,0 +1,89 @@
+:root {
+  --bg: #16211a;
+  --bg-panel: #1d2a21;
+  --bg-panel-raised: #263628;
+  --paper: #f2ecdc;
+  --paper-dim: #e4dbc3;
+  --sand: #d9af6b;
+  --sand-dim: #9c7f4c;
+  --moss: #8ca089;
+  --moss-dim: #5c6e57;
+  --rust: #c1573e;
+  --border: #34453a;
+  --border-soft: #2a3830;
+
+  --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, "Liberation Mono",
+    Menlo, monospace;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--paper);
+  font-family: var(--font-sans);
+}
+
+body {
+  background-image:
+    radial-gradient(ellipse at top left, rgba(217, 175, 107, 0.06), transparent 55%),
+    radial-gradient(ellipse at bottom right, rgba(140, 160, 137, 0.05), transparent 60%);
+}
+
+#__next,
+main {
+  height: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--sand);
+  color: #1a1a1a;
+}
+
+/* visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--sand);
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--moss-dim);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

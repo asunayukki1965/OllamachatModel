@@ -1,0 +1,68 @@
+.wrap {
+  position: relative;
+}
+
+.trigger {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  color: var(--paper-dim);
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.trigger:hover {
+  color: var(--sand);
+  border-color: var(--sand-dim);
+}
+
+.panel {
+  position: absolute;
+  top: 42px;
+  right: 0;
+  width: 280px;
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+  z-index: 20;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--moss);
+  margin-bottom: 14px;
+}
+
+.input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 7px 9px;
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--sand-dim);
+}
+
+.note {
+  font-size: 11px;
+  color: var(--moss-dim);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.note code {
+  color: var(--sand-dim);
+}

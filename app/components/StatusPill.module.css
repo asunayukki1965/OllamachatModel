@@ -1,0 +1,46 @@
+.pill {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--bg-panel);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--paper-dim);
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dotOn {
+  background: #7fb069;
+  box-shadow: 0 0 6px rgba(127, 176, 105, 0.7);
+}
+
+.dotOff {
+  background: var(--rust);
+}
+
+.dotPending {
+  background: var(--moss-dim);
+}
+
+.label {
+  text-transform: lowercase;
+}
+
+.target {
+  color: var(--moss);
+  border-left: 1px solid var(--border);
+  padding-left: 7px;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
