@@ -11,8 +11,9 @@ export async function GET() {
       () => fetch(base, { signal: controller.signal })
     );
     clearTimeout(timeout);
-    return Response.json({ online: !!res && res.ok, target: base });
+    const online = !!res && res.ok;
+    return Response.json({ online, target: base }, { status: online ? 200 : 503 });
   } catch {
-    return Response.json({ online: false, target: base });
+    return Response.json({ online: false, target: base }, { status: 503 });
   }
 }

@@ -25,7 +25,6 @@ Download a model and start it in server mode with an OpenAI-compatible API
 (swap in whichever model you like):
 
 ```bash
-curl -LO https://huggingface.co/mozilla-ai/llamafile_0.10/resolve/main/Qwen3.5-0.8B-Q8_0.llamafile
 chmod +x Qwen3.5-0.8B-Q8_0.llamafile
 ./Qwen3.5-0.8B-Q8_0.llamafile --server --port 8080
 ```
@@ -73,6 +72,19 @@ vercel deploy
 or connect the repo in the Vercel dashboard and set `LLAMAFILE_URL` (and
 `LLAMAFILE_API_KEY` if you started llamafile with `--api-key`) under
 Environment Variables before the first deploy.
+
+## 4. Deploy the app and model to Render
+
+This repository includes a `render.yaml` blueprint and `Dockerfile` that run
+the bundled llamafile beside the Next.js app. In Render, create a new Blueprint
+deployment from this repository and select the `ollamachatmodel` service. The
+blueprint uses a Standard instance (2 GB RAM); smaller instances may not have
+enough memory to load the model. The first build can take several minutes
+because it includes the 1.2 GB model in the container image.
+
+The app waits for the model through `/api/health`, and Render uses that endpoint
+as its health check. After deployment, the status pill should show the local
+model endpoint as connected.
 
 ## What's in the box
 
